@@ -1,0 +1,26 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import Process from './components/Process';
+import Benefits from "./components/Benefits";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import './App.css'
+
+function App() {
+
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-900">
+      <Navbar/>
+      <Hero/>
+      <Services/>
+      <Benefits/>
+      <Process/>
+      <Contact/>
+      <Footer/>
+
+    </main>
+  );
+}
+
+export default App
