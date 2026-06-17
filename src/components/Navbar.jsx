@@ -6,10 +6,10 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { label: "Servicios", href: "#services" },
-    { label: "Beneficios", href: "#benefits" },
-    { label: "Cómo trabajamos", href: "#process" },
-    { label: "Contacto", href: "#contact" },
+    { label: "Servicios", href: "/all-services" },
+    { label: "Beneficios", href: "/benefits" },
+    { label: "Cómo trabajamos", href: "/process" },
+    { label: "Contacto", href: "/contact" },
   ];
 
   return (
