@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { company } from "../data/siteData";
 import logo from "../assets/logo.webp";
@@ -6,16 +7,17 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { label: "Servicios", href: "/all-services" },
-    { label: "Beneficios", href: "/benefits" },
-    { label: "Cómo trabajamos", href: "/process" },
-    { label: "Contacto", href: "/contact" },
+    { label: "Home", href: "/" },
+    { label: "What We Do", href: "/services" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },/* 
+    { label: "Schedule an Appointment", href: "/schedule" }, */
   ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12 lg:px-24">
-        <a href="#home" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img
             src={logo}
             alt="True Care Insurance"
@@ -35,14 +37,15 @@ function Navbar() {
           ))}
         </div>
 
-        <a
-          href={`https://wa.me/${company.whatsapp}`}
-          target="_blank"
-          className="hidden rounded-xl bg-[var(--color-primary)] px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--color-primary-dark)] md:inline-block"
-        >
-          WhatsApp
-        </a>
+        <Link
+        to="/schedule"
+        className="rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-blue-800 hover:scale-105"
+          >
+        Schedule Appointment
+      </Link>
 
+
+          {/* RESPONSIVE MENU */}
         <button
           onClick={() => setIsOpen(true)}
           className="rounded-lg border border-slate-200 p-2 text-2xl text-slate-700 md:hidden"
@@ -92,14 +95,13 @@ function Navbar() {
           </a>
         ))}
 
-        <a
-          href={`https://wa.me/${company.whatsapp}`}
-          target="_blank"
+        <Link
+          to="/schedule"
           onClick={() => setIsOpen(false)}
-          className="mt-4 w-full rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-center text-lg font-bold text-white shadow-lg"
+          className="rounded-xl bg-blue-700 px-5 py-4 text-center font-semibold text-white"
         >
-          Escribir por WhatsApp
-        </a>
+          Schedule Appointment
+        </Link>
       </div>
     </div>
   </div>

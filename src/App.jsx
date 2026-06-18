@@ -1,28 +1,31 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import FeaturedServices from "./components/FeaturedServices";
-import AllServices from "./components/AllServices";
-import Process from './components/Process';
-import Benefits from "./components/Benefits";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import './App.css'
+import Home from "./pages/Home";
+import ServicesPage from "./pages/ServicesPage";
+import ScrollToTop from "./components/ScrollToTop";
+import AboutPage from "./pages/AboutPage";
+import SchedulePage from "./pages/SchedulePage";
 
 function App() {
-
   return (
-    <main className="min-h-screen bg-slate-100 text-slate-900">
-      <Navbar/>
-      <Hero/>
-      <FeaturedServices/>
-      <AllServices/>
-      <Benefits/>
-      <Process/>
-      <Contact/>
-      <Footer/>
+  <BrowserRouter>
+      <ScrollToTop />
 
+    <main className="min-h-screen bg-slate-50 text-slate-900">
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+      </Routes>
+
+      <Footer />
     </main>
+  </BrowserRouter>
   );
 }
 
-export default App
+export default App;

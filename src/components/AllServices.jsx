@@ -49,7 +49,7 @@ function AllServices() {
           </p>
 
           <a
-            href="#contact"
+            href="/contact"
             className="mt-6 inline-block rounded-xl bg-white px-6 py-4 font-semibold text-[var(--color-primary)] transition hover:bg-slate-100"
           >
             Solicitar orientación

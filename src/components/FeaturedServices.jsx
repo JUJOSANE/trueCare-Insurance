@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HeartPulse, Car, FileText, ArrowRight } from "lucide-react";
 import { services } from "../data/siteData";
 
@@ -47,13 +48,13 @@ function FeaturedServices() {
                   {service.description}
                 </p>
 
-                <a
-                  href="#all-services"
+                <Link
+                  to="/services"
                   className="inline-flex items-center gap-2 font-semibold text-[var(--color-primary)] transition hover:gap-3"
                 >
                   Ver más Servicios
                   <ArrowRight size={18} />
-                </a>
+                </Link>
               </article>
             );
           })}
