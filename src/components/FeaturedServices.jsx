@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { HeartPulse, Car, FileText, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { services } from "../data/siteData";
+import {ShieldPlus,HeartHandshake, Landmark} from "lucide-react";
 
 const icons = {
-  health: HeartPulse,
-  vehicle: Car,
-  claims: FileText,
+  health: ShieldPlus,
+  vehicle: Landmark,
+  claims: HeartHandshake,
 };
 
 function FeaturedServices() {
@@ -18,12 +19,13 @@ function FeaturedServices() {
           </span>
 
           <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
-            Acompañamiento claro en momentos importantes
+            Insurance Solutions Tailored to Your Need
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-            Le ofrecemos asesoría cercana en seguros de salud, situaciones
-            vehiculares y procesos con aseguradoras.
+            We provide personalized guidance for Medicare, life insurance,
+            and retirement planning, helping you make informed decisions
+            with confidence.
           </p>
         </div>
 
@@ -49,10 +51,10 @@ function FeaturedServices() {
                 </p>
 
                 <Link
-                  to="/services"
+                  to={service.href}
                   className="inline-flex items-center gap-2 font-semibold text-[var(--color-primary)] transition hover:gap-3"
                 >
-                  Ver más Servicios
+                  Learn More
                   <ArrowRight size={18} />
                 </Link>
               </article>
