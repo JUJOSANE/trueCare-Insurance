@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { company } from "../data/siteData";
 import logo from "../assets/logo.webp";
+import { ChevronDown } from "lucide-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  };
+}, [isOpen]);
 
   const links = [
     { label: "Home", href: "/" },
@@ -13,34 +28,69 @@ function Navbar() {
     { label: "Contact", href: "/contact" },/* 
     { label: "Schedule an Appointment", href: "/schedule" }, */
   ];
+const whatWeDoLinks = [
+  { label: "Medicare", to: "/services#medicare" },
+  { label: "Life Insurance", to: "/services#life-insurance" },
+  { label: "Health Insurance", to: "/services#health-insurance" },
+  { label: "Retirement Planning", to: "/services#retirement-planning" },
+  { label: "Group Insurance", to: "/services#group-insurance" },
+];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12 lg:px-24">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logo}
             alt="True Care Insurance"
             className="h-10 w-auto md:h-14"
           />
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="hover:text-[var(--color-primary)]"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            if (link.label === "What We Do") {
+              return (
+                <div key={link.href} className="group relative">
+                  <Link
+                    to={link.href}
+                    className="flex items-center gap-1 hover:text-[var(--color-primary)]"
+                  >
+                    {link.label}
+                    <ChevronDown size={16} />
+                  </Link>
+
+                  <div className="invisible absolute left-0 top-full z-50 mt-3 w-64 translate-y-2 rounded-2xl border border-slate-100 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    {whatWeDoLinks.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-blue-50 hover:text-[var(--color-primary)]"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="hover:text-[var(--color-primary)]"
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         <Link
         to="/schedule"
-        className="rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-blue-800 hover:scale-105"
-          >
+        className="hidden rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold
+         text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-800 md:inline-block"  >
         Schedule Appointment
       </Link>
 
@@ -55,18 +105,9 @@ function Navbar() {
         </button>
       </nav>
       
-     <div
-        className={`fixed inset-0 z-[999] h-dvh w-screen transition-all duration-300 ease-in-out md:hidden ${
-          isOpen
-            ? "visible bg-slate-950/60 opacity-100 backdrop-blur-sm"
-            : "invisible bg-slate-950/0 opacity-0"
-        }`}
-      >
-    <div
-        className={`flex h-full w-full flex-col bg-white/95 px-6 py-6 transition-transform duration-500 ease-out ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+     {isOpen && (
+  <div className="fixed left-0 top-0 z-[99999] h-[100dvh] w-screen overflow-hidden bg-white md:hidden">
+    <div className="flex h-full w-full flex-col px-6 py-6">
       <div className="flex items-center justify-between">
         <img
           src={logo}
@@ -83,76 +124,58 @@ function Navbar() {
         </button>
       </div>
 
-      <div className="flex flex-1 flex-col items-center justify-center gap-8 text-center text-3xl font-bold text-slate-800">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setIsOpen(false)}
-            className="transition hover:text-[var(--color-primary)]"
-          >
-            {link.label}
-          </a>
-        ))}
+      <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto text-center text-2xl font-bold text-slate-800">
+        {links.map((link) => {
+          if (link.label === "What We Do") {
+            return (
+              <div key={link.href} className="flex flex-col items-center gap-3">
+                <Link
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="transition hover:text-[var(--color-primary)]"
+                >
+                  {link.label}
+                </Link>
+
+                <div className="flex flex-col gap-2 text-base font-semibold text-slate-600">
+                  {whatWeDoLinks.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setIsOpen(false)}
+                      className="rounded-xl bg-slate-100 px-4 py-2 transition hover:text-[var(--color-primary)]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setIsOpen(false)}
+              className="transition hover:text-[var(--color-primary)]"
+            >
+              {link.label}
+            </Link>
+          );
+        })}
 
         <Link
           to="/schedule"
           onClick={() => setIsOpen(false)}
-          className="rounded-xl bg-blue-700 px-5 py-4 text-center font-semibold text-white"
+          className="mt-4 rounded-xl bg-blue-700 px-5 py-4 text-center text-xl font-semibold text-white"
         >
           Schedule Appointment
         </Link>
       </div>
     </div>
   </div>
-
-
-
-      {/* <div
-        className={`fixed inset-0 z-50 bg-white px-6 py-6 transition-all duration-300 md:hidden ${
-          isOpen
-            ? "visible translate-x-0 opacity-100"
-            : "invisible translate-x-full opacity-0"
-        }`}
-      >
-        <div className="flex items-center justify-between">
-          <img
-            src={logo}
-            alt="True Care Insurance"
-            className="h-10 w-auto"
-          />
-
-          <button
-            onClick={() => setIsOpen(false)}
-            className="rounded-lg border border-slate-200 px-3 py-1 text-3xl text-slate-700"
-            aria-label="Cerrar menú"
-          >
-            ×
-          </button>
-        </div>
-
-        <div className="mt-16 flex flex-col gap-8 text-center text-2xl font-semibold text-slate-800">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="transition hover:text-[var(--color-primary)]"
-            >
-              {link.label}
-            </a>
-          ))}
-
-          <a
-            href={`https://wa.me/${company.whatsapp}`}
-            target="_blank"
-            onClick={() => setIsOpen(false)}
-            className="mt-6 rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-lg font-bold text-white shadow-lg"
-          >
-            Escribir por WhatsApp
-          </a>
-        </div>
-      </div> */}
+)}
     </header>
   );
 }

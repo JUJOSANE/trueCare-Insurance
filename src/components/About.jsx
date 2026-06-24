@@ -1,4 +1,5 @@
 import { Mail, Phone } from "lucide-react";
+import {FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok,} from "react-icons/fa";
 import ftRosario from "../assets/ftRosario.webp"
 import ftArmida from "../assets/ftArmida.webp"
 
@@ -11,8 +12,12 @@ const advisors = [
       "Rosario helps clients understand their options with patience, clarity and personalized guidance.",
     phone: "tel:5153052213",
     email: "mailto:rosario@truecare-insurance.com",
-    facebook: "#",
-    linkedin: "#",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://facebook.com",
+      tiktok: "https://facebook.com",
+      linkedin: "https://facebook.com",
+    },
   },
   {
     name: "Armida Gonzales",
@@ -20,12 +25,30 @@ const advisors = [
     image: ftArmida,
     description:
       "Focused on helping families and individuals find reliable support for health insurance and protection needs.",
-    phone: "tel:5153052213",
-    email: "mailto:contact@truecare-insurance.com",
-    facebook: "#",
-    linkedin: "#",
+    phone: "tel:5153053545",
+    email: "mailto:armidagonzalez101@gmail.com",
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://facebook.com",
+      tiktok: "https://facebook.com",
+      linkedin: "https://facebook.com",
+    },
   },
 ];
+function SocialLink({ href, children }) {
+  if (!href || href === "#") return null;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 text-slate-700 transition-all duration-300 hover:scale-110 hover:border-[#58C7E6] hover:bg-[#58C7E6] hover:text-slate-900"
+    >
+      {children}
+    </a>
+  );
+}
 
 function About() {
   return (
@@ -73,35 +96,34 @@ function About() {
                   {advisor.description}
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap gap-3">
                   <a
                     href={advisor.phone}
                     className="rounded-xl bg-[var(--color-primary)] px-4 py-3 font-semibold text-white"
-                  >
-                    <Phone size={18} className="inline" /> Call
-                  </a>
+                  ><Phone size={18} className="inline" /> Call</a>
 
                   <a
                     href={advisor.email}
                     className="rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-700"
-                  >
-                    <Mail size={18} className="inline" /> Email
-                  </a>
-
-                  <a
-                    href={advisor.facebook}
-                    className="rounded-xl border border-slate-300 px-4 py-3 text-slate-700"
-                  >
-                    <span className="font-bold">f</span>
-                  </a>
-
-                  <a
-                    href={advisor.linkedin}
-                    className="rounded-xl border border-slate-300 px-4 py-3 text-slate-700"
-                  >
-                    <span className="font-bold">L</span>
-                  </a>
+                  ><Mail size={18} className="inline" /> Email </a>
                 </div>
+          <div className="mt-3 flex flex-wrap gap-3">
+              <SocialLink href={advisor.socials.facebook}>
+                <FaFacebookF size={18} />
+              </SocialLink>
+
+              <SocialLink href={advisor.socials.instagram}>
+                <FaInstagram size={18} />
+              </SocialLink>
+
+              <SocialLink href={advisor.socials.tiktok}>
+                <FaTiktok size={18} />
+              </SocialLink>
+
+              <SocialLink href={advisor.socials.linkedin}>
+                <FaLinkedinIn size={18} />
+              </SocialLink>
+            </div>
               </div>
             </article>
           ))}

@@ -15,7 +15,7 @@ export const benefits = [
 export const services = [
   {
     icon: "health",
-    title: "Medicare Plans",
+    title: "Medicare",
     description:
       "Guidance for Medicare Advantage, Medicare Supplement, and prescription drug coverage options.",
     href: "/services#medicare",
@@ -29,39 +29,31 @@ export const services = [
   },
   {
     icon: "vehicle",
-    title: "Retirement Planning",
+    title: "Health Insurance",
     description:
-      "Financial products that may help create steady income and support retirement goals.",
-    href: "/services#annuities",
+      "Dental, vision, cancer, and supplemental coverage options for individuals and families.",
+    href: "/services#health-insurance",
   },
 ];
 
 
 
-export const whatWeDoDetails = [
+/* export const whatWeDoDetails = [
   {
-    id: "medicare",
-    title: "Medicare Plans",
-    image: "/images/medicarePlans.png",
-    summary:
-      "Plans designed for people age 65 and older, retirees, and individuals who qualify for Medicare due to disability.",
-    details: [
-      "Guidance for Medicare Advantage, Medicare Supplement, and prescription drug plan options.",
-      "Medicare includes different parts that may help cover hospital care, doctor services, outpatient care, and prescription drugs.",
-      "We help clients understand their options and choose coverage based on their needs.",
-    ],
-  },
-  {
-    id: "indemnity-plans",
-    title: "Indemnity Plans",
-    image: "/images/indemnity.png",
-    summary:
-      "Medical plans that may pay a fixed cash amount for certain covered medical services.",
-    details: [
-      "These plans may provide cash benefits for specific services such as hospitalization.",
-      "They can help with out-of-pocket costs depending on the plan.",
-    ],
-  },
+  id: "medicare",
+  title: "Medicare Plans",
+  image: "/images/medicarePlans.png",
+  summary:
+    "Medicare is a federal health insurance program for people age 65 or older, and for certain individuals under 65 with disabilities or specific health conditions.",
+  details: [
+    "Medicare Part A may help cover inpatient hospital care, skilled nursing facility care, hospice care, and some home health care.",
+    "Medicare Part B may help cover doctor services, outpatient care, durable medical equipment, home health care, and preventive services.",
+    "Medicare Advantage, also known as Part C, is an alternative to Original Medicare that often combines Part A, Part B, and sometimes Part D into one plan.",
+    "Medicare Part D may help cover the cost of prescription drugs, including many recommended vaccines.",
+    "Medicare Supplement plans, also called Medigap, may help cover some costs Original Medicare does not pay, such as copayments, coinsurance, and deductibles.",
+    "Eligibility may be based on age, disability, End-Stage Renal Disease, or other qualifying health conditions.",
+  ],
+},
   {
     id: "life-insurance",
     title: "Life Insurance",
@@ -85,6 +77,28 @@ export const whatWeDoDetails = [
     ],
   },
   {
+    id: "cancer-insurance",
+    title: "Cancer Insurance",
+    image: "/images/cancerInsurance.png",
+    summary:
+      "Supplemental coverage designed to provide support during cancer diagnosis and treatment.",
+    details: [
+      "Cancer insurance may help with costs related to diagnosis, treatment, and recovery.",
+      "It can provide additional financial support beyond primary health coverage depending on the policy.",
+    ],
+  },
+  {
+    id: "indemnity-plans",
+    title: "Indemnity Plans",
+    image: "/images/indemnity.png",
+    summary:
+      "Medical plans that may pay a fixed cash amount for certain covered medical services.",
+    details: [
+      "These plans may provide cash benefits for specific services such as hospitalization.",
+      "They can help with out-of-pocket costs depending on the plan.",
+    ],
+  },
+  {
     id: "dental-vision",
     title: "Dental & Vision Insurance",
     image: "/images/dental&Vision.png",
@@ -97,14 +111,14 @@ export const whatWeDoDetails = [
     ],
   },
   {
-    id: "cancer-insurance",
-    title: "Cancer Insurance",
-    image: "/images/cancerInsurance.png",
+    id: "long-term-care",
+    title: "Long Term Care",
+    image: "/images/longTermCare.png",
     summary:
-      "Supplemental coverage designed to provide support during cancer diagnosis and treatment.",
+      "Financial products designed to help create steady income for retirement planning.",
     details: [
-      "Cancer insurance may help with costs related to diagnosis, treatment, and recovery.",
-      "It can provide additional financial support beyond primary health coverage depending on the policy.",
+      "Annuities may help support long-term retirement income goals.",
+      "They can be part of a strategy for future financial stability.",
     ],
   },
   {
@@ -118,15 +132,78 @@ export const whatWeDoDetails = [
       "Plan options may vary depending on the company size and needs.",
     ],
   },
+]; */
+
+export const whatWeDoDetails = [
   {
-    id: "Long-term-care",
-    title: "Long Term Care",
+    id: "medicare",
+    title: "Medicare",
+    image: "/images/medicarePlans.png",
+    summary:
+      "Guidance for Medicare options, including Medicare Advantage, Medicare Supplement, and prescription drug coverage.",
+    details: [
+      "Medicare Part A may help cover inpatient hospital care, skilled nursing facility care, hospice care, and some home health care.",
+      "Medicare Part B may help cover doctor services, outpatient care, durable medical equipment, home health care, and preventive services.",
+      "Medicare Advantage, also known as Part C, is an alternative to Original Medicare and often combines Part A, Part B, and sometimes Part D into one plan.",
+      "Medicare Part D may help cover the cost of prescription drugs, including many recommended vaccines.",
+      "Medicare Supplement plans, also called Medigap, may help cover some costs Original Medicare does not pay, such as copayments, coinsurance, and deductibles.",
+      "Eligibility may be based on age, disability, End-Stage Renal Disease, or other qualifying health conditions.",
+    ],
+  },
+  {
+    id: "life-insurance",
+    title: "Life Insurance",
+    image: "/images/lifeInsurance.png",
+    summary:
+      "Life insurance options designed to help protect your family, prepare for final expenses, and support long-term financial planning.",
+    details: [
+      "Term Life Insurance may provide coverage for a specific period of time and can help protect your family during important financial years.",
+      "Whole Life Insurance may provide lifelong protection and can include cash value depending on the policy.",
+      "Universal Life Insurance may offer flexible coverage options and may support long-term planning goals.",
+      "Final Expense Insurance may help loved ones cover funeral costs, burial expenses, and other final arrangements.",
+      "Life insurance can help with income replacement, debt protection, family protection, and future planning.",
+    ],
+  },
+  {
+    id: "health-insurance",
+    title: "Health Insurance",
+    image: "/images/indemnity.png",
+    summary:
+      "Supplemental and health-related coverage options, including indemnity plans, dental and vision, and cancer insurance.",
+    details: [
+      "Indemnity Plans may provide cash benefits for certain covered medical services, such as hospitalization or other qualifying medical events.",
+      "Dental Insurance may help with preventive services such as exams and cleanings, as well as basic or major dental care depending on the plan.",
+      "Vision Insurance may help with eye exams, glasses, contact lenses, or other vision-related needs depending on the plan.",
+      "Cancer Insurance may provide additional financial support during diagnosis, treatment, recovery, and related expenses.",
+      "Coverage options vary by plan, eligibility, location, and personal situation.",
+    ],
+  },
+  {
+    id: "retirement-planning",
+    title: "Retirement Planning",
     image: "/images/longTermCare.png",
     summary:
-      "Financial products designed to help create steady income for retirement planning.",
+      "Planning support for long-term care needs, retirement income, and future financial stability.",
     details: [
-      "Annuities may help support long-term retirement income goals.",
-      "They can be part of a strategy for future financial stability.",
+      "Long Term Care coverage may help with care needs that are not usually covered by standard health insurance.",
+      "This type of planning may help protect savings from the high costs of extended care.",
+      "Annuities may help create steady income for retirement planning.",
+      "Retirement planning can help clients prepare for future healthcare, income, and protection needs.",
+      "Our team helps clients review options based on their goals, age, budget, and personal situation.",
+    ],
+  },
+  {
+    id: "group-insurance",
+    title: "Group Insurance",
+    image: "/images/groupInsurance.png",
+    summary:
+      "Insurance options for companies that want to support employees with coverage solutions.",
+    details: [
+      "Group Insurance can help businesses offer coverage options to their employees.",
+      "Plan options may vary depending on company size, employee needs, and available carriers.",
+      "This can be useful for companies with more than two employees.",
+      "Group coverage may help businesses improve employee benefits and support retention.",
+      "Our team can help employers review available options and understand how group coverage may work.",
     ],
   },
 ];

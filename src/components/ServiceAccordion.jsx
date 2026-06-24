@@ -1,21 +1,18 @@
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
-function ServiceAccordion({ service }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function ServiceAccordion({ service, isOpen, onToggle }) {
   return (
     <article
       id={service.id}
-      className={`scroll-mt-28 overflow-hidden rounded-[2rem] border bg-white shadow-sm transition-all duration-300 ${
+      className={`scroll-mt-96 overflow-hidden rounded-[2rem] border bg-white shadow-sm transition-all duration-300 ${
         isOpen
           ? "border-[var(--color-primary)] shadow-xl"
           : "border-slate-200"
       }`}
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className="grid w-full gap-6 p-5 text-left md:grid-cols-[220px_1fr_auto] md:items-center md:p-6"
       >
         <div className="h-48 overflow-hidden rounded-3xl bg-slate-200 md:h-36">

@@ -5,8 +5,8 @@ import { Phone, Mail } from "lucide-react";
 function Footer() {
   return (
     <footer className="bg-slate-950 px-6 py-14 text-white md:px-12 lg:px-24">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-10 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col items-center sm:items-start">
           <a href="/" className="flex items-center">
           <img src={logo} alt="True Care Insurance" className="h-16 w-auto" />
           </a>
@@ -18,18 +18,20 @@ function Footer() {
         <div>
           <h3 className="mb-4 font-bold">Rosario Marquez</h3>
 
-          <a className=" block text-slate-300 hover:text-[#58C7E6]"
-          href="tel:5153052213"
+          <a
+            className="flex items-center justify-center gap-2 text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
+            href="tel:5153052213"
           >
             <Phone size={16} />
             515-305-2213</a>
-          <a className=" block text-slate-300 hover:text-[#58C7E6]" 
-          href="mailto:rosario@truecare-insurance.com?subject=Insurance Consultation&body=Hello Rosario,%0A%0AI would like more information about your services."
+          <a
+            className="flex items-center justify-center gap-2 break-all text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
+            href="mailto:rosario@truecare-insurance.com?subject=Insurance Consultation&body=Hello Rosario,%0A%0AI would like more information about your services."
           >
             <Mail size={16} />
             rosario@truecare-insurance.com</a>
 
-          <div className="mt-5 flex gap-3">
+          <div className="mt-5 flex justify-center gap-3 sm:justify-start">
 
             <a href="..."
                 target="_blank"
@@ -68,19 +70,21 @@ function Footer() {
         <div>
           <h3 className="mb-4 font-bold">Armida Gonzalez</h3>
 
-          <a className="block text-slate-300 hover:text-[#58C7E6]"
-          href="tel:5153053545"
+          <a
+            className="flex items-center justify-center gap-2 text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
+            href="tel:5153052213"
           >
             <Phone size={16} />
             515-305-3545</a>
-          <a className=" block text-slate-300 hover:text-[#58C7E6]"
+          <a 
+          className="flex items-center justify-center gap-2 break-all text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
           href="mailto:armidagonzalez101@gmail.com?subject=Insurance Consultation&body=Hello Armida,%0A%0AI would like more information about your services."
           >
             <Mail size={16} />
             armidagonzalez101@gmail.com</a>
 
           
-          <div className="mt-5 flex gap-3">
+          <div className="mt-5 flex justify-center gap-3 sm:justify-start">
 
             <a href="..."
                 target="_blank"

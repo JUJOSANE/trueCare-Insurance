@@ -7,6 +7,13 @@
   --color-light: #F8FAFC;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* :root {
   --text: #6b6375;
   --text-h: #08060d;
