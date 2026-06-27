@@ -1,20 +1,20 @@
+import { useLanguage } from "../context/LanguageContext";
+
 function Reviews() {
+  const { t } = useLanguage();
   return (
 <section className="bg-white px-6 py-24 md:px-12 lg:px-24">
   <div className="mx-auto mb-16 max-w-4xl text-center">
     <span className="font-semibold uppercase tracking-wider text-[var(--color-primary)]">
-      Client Testimonials
+      {t.reviews.tag}
     </span>
 
     <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
-    Why Clients Trust
-    True Care Insurance
+      {t.reviews.title}
     </h2>
 
     <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-        Our commitment is simple:
-        provide clear guidance, personalized service,
-        and support when it matters most.
+      {t.reviews.text}
     </p>
   </div>
 

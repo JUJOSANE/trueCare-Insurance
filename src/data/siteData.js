@@ -1,8 +1,8 @@
 export const company = {
   name: "TrueCare-Insurance",
-  phone: "+1 000 000 0000",
-  whatsapp: "10000000000",
-  email: "contacto@empresa.com",
+  phone: "+15153052213",
+  whatsapp: "+15152022826",
+  email: "rosario@truecare-insurance.com",
 };
 
 export const benefits = [
@@ -15,23 +15,17 @@ export const benefits = [
 export const services = [
   {
     icon: "health",
-    title: "Medicare",
-    description:
-      "Guidance for Medicare Advantage, Medicare Supplement, and prescription drug coverage options.",
+    key: "medicare",
     href: "/services#medicare",
   },
   {
     icon: "claims",
-    title: "Life Insurance",
-    description:
-      "Coverage options designed to protect your loved ones and support future planning.",
+    key: "life",
     href: "/services#life-insurance",
   },
   {
     icon: "vehicle",
-    title: "Health Insurance",
-    description:
-      "Dental, vision, cancer, and supplemental coverage options for individuals and families.",
+    key: "health",
     href: "/services#health-insurance",
   },
 ];
@@ -137,6 +131,33 @@ export const services = [
 export const whatWeDoDetails = [
   {
     id: "medicare",
+    translationKey: "medicare",
+    image: "/images/medicarePlans.png",
+  },
+  {
+    id: "life-insurance",
+    translationKey: "lifeInsurance",
+    image: "/images/lifeInsurance.png",
+  },
+  {
+    id: "health-insurance",
+    translationKey: "healthInsurance",
+    image: "/images/indemnity.png",
+  },
+  {
+    id: "retirement-planning",
+    translationKey: "retirementPlanning",
+    image: "/images/longTermCare.png",
+  },
+  {
+    id: "group-insurance",
+    translationKey: "groupInsurance",
+    image: "/images/groupInsurance.png",
+  },
+];
+/* export const whatWeDoDetails = [
+  {
+    id: "medicare",
     title: "Medicare",
     image: "/images/medicarePlans.png",
     summary:
@@ -206,4 +227,4 @@ export const whatWeDoDetails = [
       "Our team can help employers review available options and understand how group coverage may work.",
     ],
   },
-];
+]; */

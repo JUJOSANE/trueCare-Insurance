@@ -1,7 +1,10 @@
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 
 function ServiceAccordion({ service, isOpen, onToggle }) {
+  const { t } = useLanguage();
+const content = t.servicesPage[service.translationKey];
   return (
     <article
       id={service.id}
@@ -29,11 +32,11 @@ function ServiceAccordion({ service, isOpen, onToggle }) {
           </span>
 
           <h3 className="mt-3 text-2xl font-bold text-slate-900">
-            {service.title}
+            {content.title}
           </h3>
 
           <p className="mt-3 leading-7 text-slate-600">
-            {service.summary}
+            {content.summary}
           </p>
         </div>
 
@@ -53,7 +56,7 @@ function ServiceAccordion({ service, isOpen, onToggle }) {
         <div className="overflow-hidden">
           <div className="border-t border-slate-100 px-6 pb-8 pt-6 md:ml-[244px]">
             <ul className="space-y-3 text-slate-600">
-              {service.details.map((item) => (
+              {content.details.map((item) => (
                 <li key={item} className="flex gap-3 leading-7">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--color-primary)]" />
                   {item}
@@ -65,7 +68,7 @@ function ServiceAccordion({ service, isOpen, onToggle }) {
               to="/schedule"
               className="mt-8 inline-block rounded-xl bg-[var(--color-primary)] px-6 py-3 font-semibold text-white transition hover:bg-[var(--color-primary-dark)]"
             >
-              Schedule an Appointment
+              {t.servicesPage.button}
             </Link>
           </div>
         </div>

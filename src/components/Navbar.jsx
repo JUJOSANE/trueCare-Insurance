@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { company } from "../data/siteData";
 import logo from "../assets/logo.webp";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 function Navbar() {
+  const { language, t, toggleLanguage } = useLanguage();
+
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
   if (isOpen) {
@@ -21,19 +24,18 @@ function Navbar() {
   };
 }, [isOpen]);
 
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "What We Do", href: "/services" },
-    { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },/* 
-    { label: "Schedule an Appointment", href: "/schedule" }, */
-  ];
+const links = [
+  { key: "home", label: t.nav.home, href: "/" },
+  { key: "whatWeDo", label: t.nav.whatWeDo, href: "/services" },
+  { key: "about", label: t.nav.about, href: "/about" },
+  { key: "contact", label: t.nav.contact, href: "/contact" },
+];
 const whatWeDoLinks = [
-  { label: "Medicare", to: "/services#medicare" },
-  { label: "Life Insurance", to: "/services#life-insurance" },
-  { label: "Health Insurance", to: "/services#health-insurance" },
-  { label: "Retirement Planning", to: "/services#retirement-planning" },
-  { label: "Group Insurance", to: "/services#group-insurance" },
+  { key: "medicare", label: t.servicesPage.medicare.title, to: "/services#medicare" },
+  { key: "lifeInsurance", label: t.servicesPage.lifeInsurance.title, to: "/services#life-insurance" },
+  { key: "healthInsurance", label: t.servicesPage.healthInsurance.title, to: "/services#health-insurance" },
+  { key: "retirementPlanning", label: t.servicesPage.retirementPlanning.title, to: "/services#retirement-planning" },
+  { key: "groupInsurance", label: t.servicesPage.groupInsurance.title, to: "/services#group-insurance" },
 ];
 
   return (
@@ -49,7 +51,7 @@ const whatWeDoLinks = [
 
         <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
           {links.map((link) => {
-            if (link.label === "What We Do") {
+            if (link.key === "whatWeDo") {
               return (
                 <div key={link.href} className="group relative">
                   <Link
@@ -63,7 +65,7 @@ const whatWeDoLinks = [
                   <div className="invisible absolute left-0 top-full z-50 mt-3 w-64 translate-y-2 rounded-2xl border border-slate-100 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     {whatWeDoLinks.map((item) => (
                       <Link
-                        key={item.to}
+                        key={item.key}
                         to={item.to}
                         className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-blue-50 hover:text-[var(--color-primary)]"
                       >
@@ -86,13 +88,21 @@ const whatWeDoLinks = [
             );
           })}
         </div>
+<div className="hidden items-center gap-4 md:flex">
+  <button
+    onClick={toggleLanguage}
+    className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+  >
+    {language === "en" ? "ES" : "EN"}
+  </button>
 
-        <Link
-        to="/schedule"
-        className="hidden rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold
-         text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-800 md:inline-block"  >
-        Schedule Appointment
-      </Link>
+  <Link
+    to="/schedule"
+    className="rounded-xl bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-800"
+  >
+    {t.nav.schedule}
+  </Link>
+</div>
 
 
           {/* RESPONSIVE MENU */}
@@ -123,10 +133,18 @@ const whatWeDoLinks = [
           ×
         </button>
       </div>
+      <div className="mt-6 flex justify-center">
+      <button
+        onClick={toggleLanguage}
+        className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+      >
+        {language === "en" ? "Español" : "English"}
+      </button>
+    </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-6 overflow-y-auto text-center text-2xl font-bold text-slate-800">
         {links.map((link) => {
-          if (link.label === "What We Do") {
+          if (link.key === "whatWeDo") {
             return (
               <div key={link.href} className="flex flex-col items-center gap-3">
                 <Link
@@ -170,7 +188,7 @@ const whatWeDoLinks = [
           onClick={() => setIsOpen(false)}
           className="mt-4 rounded-xl bg-blue-700 px-5 py-4 text-center text-xl font-semibold text-white"
         >
-          Schedule Appointment
+          {t.nav.schedule}
         </Link>
       </div>
     </div>

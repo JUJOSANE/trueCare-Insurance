@@ -1,8 +1,10 @@
 import logo from "../assets/logo.webp";
 import {FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok,} from "react-icons/fa";
 import { Phone, Mail } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-slate-950 px-6 py-14 text-white md:px-12 lg:px-24">
       <div className="mx-auto grid max-w-7xl gap-10 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4">
@@ -121,9 +123,9 @@ function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 font-bold">Location</h3>
+          <h3 className="mb-4 font-bold">{t.footer.tag}</h3>
           <p className="text-slate-300">Des Moines, Iowa</p>
-          <p className="mt-3 text-slate-300">Monday - Friday</p>
+          <p className="mt-3 text-slate-300">{t.footer.text}</p>
           <p className="text-slate-300">9:00 AM to 5:00 PM</p>
         </div>
       </div>

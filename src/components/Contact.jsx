@@ -7,14 +7,15 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ContactBenefits from "./ContactBenefits";
+import { useLanguage } from "../context/LanguageContext";
 
 const advisors = [
   {
-    name: "Armida Gonzalez",
+    name: "Rosario Marquez",
     role: "Licensed Insurance Advisor",
-    phone: "5153053545",
-    phoneLabel: "515-305-3545",
-    email: "armida@truecare-insurance.com",
+    phone: "5153052213",
+    phoneLabel: "515-305-2213",
+    email: "rosario@truecare-insurance.com",
     socials: {
       facebook: "#",
       linkedin: "#",
@@ -23,11 +24,11 @@ const advisors = [
     },
   },
   {
-    name: "Rosario Marquez",
+    name: "Armida Gonzalez",
     role: "Licensed Insurance Advisor",
-    phone: "5153052213",
-    phoneLabel: "515-305-2213",
-    email: "rosario@truecare-insurance.com",
+    phone: "5153053545",
+    phoneLabel: "515-305-3545",
+    email: "armidagonzalez101@gmail.com",
     socials: {
       facebook: "#",
       linkedin: "#",
@@ -53,21 +54,21 @@ function SocialIcon({ href, children }) {
 }
 
 function Contact() {
+  const { t } = useLanguage();
   return (
     <section className="bg-slate-50 px-6 py-20 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="font-semibold uppercase tracking-wider text-[var(--color-primary)]">
-            Contact Us
+            {t.contact.tag}
           </span>
 
           <h1 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
-            Speak with a True Care advisor
+            {t.contact.title}
           </h1>
 
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Have questions about Medicare, life insurance, retirement planning,
-            or coverage options? Our team is ready to help.
+            {t.contact.text}
           </p>
         </div>
 
@@ -125,7 +126,7 @@ function Contact() {
                 to="/schedule"
                 className="mt-8 inline-block rounded-xl bg-[var(--color-primary)] px-6 py-4 font-semibold text-white transition hover:bg-[var(--color-primary-dark)]"
               >
-                Schedule Appointment
+                {t.contact.schedule}
               </Link>
             </article>
           ))}
@@ -136,7 +137,7 @@ function Contact() {
           <div className="flex gap-4">
             <MapPin className="shrink-0 text-[#58C7E6]" />
             <div>
-              <h3 className="font-bold">Location</h3>
+              <h3 className="font-bold">{t.contact.info.location}</h3>
               <p className="mt-2 text-slate-300">Des Moines, Iowa</p>
             </div>
           </div>
@@ -144,16 +145,16 @@ function Contact() {
           <div className="flex gap-4">
             <Clock className="shrink-0 text-[#58C7E6]" />
             <div>
-              <h3 className="font-bold">Business Hours</h3>
-              <p className="mt-2 text-slate-300">Monday - Friday</p>
+              <h3 className="font-bold">{t.contact.info.hours}</h3>
+              <p className="mt-2 text-slate-300">{t.contact.info.days}</p>
               <p className="text-slate-300">9:00 AM to 5:00 PM</p>
             </div>
           </div>
 
           <div>
-            <h3 className="font-bold">Prefer online booking?</h3>
+            <h3 className="font-bold">{t.contact.info.online}</h3>
             <p className="mt-2 text-slate-300">
-              Choose an available time and our team will follow up with you.
+              {t.contact.info.onlineText}
             </p>
           </div>
         </div>
