@@ -9,7 +9,7 @@ function SEO({
   const siteName = "True Care Insurance";
 
   // Cuando tengan dominio solo cambia esta línea
-  const baseUrl = "https://truecare-insurance.vercel.app";
+  const baseUrl = "https://true-care-insurance.vercel.app";
 
   const fullUrl = `${baseUrl}${url}`;
   const fullImage = `${baseUrl}${image}`;
