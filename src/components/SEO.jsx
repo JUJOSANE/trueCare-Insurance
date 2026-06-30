@@ -57,11 +57,12 @@ function SEO({
     },
   ],
 };
+const pageTitle = title ? `${title} | ${siteName}` : siteName;
 
   return (
     <Helmet>
       {/* Básico */}
-      <title>{title} | {siteName}</title>
+      <title>{pageTitle}</title>
 
       <meta
         name="description"
@@ -79,7 +80,7 @@ function SEO({
 
       <meta
         property="og:title"
-        content={`${title} | ${siteName}`}
+        content={pageTitle}
       />
 
       <meta
@@ -110,7 +111,7 @@ function SEO({
 
       <meta
         name="twitter:title"
-        content={`${title} | ${siteName}`}
+        content={pageTitle}
       />
 
       <meta
