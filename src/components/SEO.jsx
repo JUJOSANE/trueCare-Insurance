@@ -57,7 +57,7 @@ function SEO({
     },
   ],
 };
-const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const pageTitle = title ? `${siteName} | ${title}` : siteName;
 
   return (
     <Helmet>
