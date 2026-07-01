@@ -2,17 +2,18 @@ import { Mail, Phone } from "lucide-react";
 import {FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok,} from "react-icons/fa";
 import ftRosario from "../assets/ftRosario.webp"
 import ftArmida from "../assets/ftArmida.webp"
+import ftrosarioyarmida from "../assets/rosarioyArmida.webp"
 import { useLanguage } from "../context/LanguageContext";
 
 const advisors = [
   {
-    name: "Rosario Márquez",
+    name: "Rosario Marquez",
     translationKey: "rosario",
-    role: "Licensed Insurance Advisor",
+    role: "Insurance Agent",
     image: ftRosario,
     description:
       "Rosario helps clients understand their options with patience, clarity and personalized guidance.",
-    phone: "tel:5153052213",
+    phone: "tel:5153611764",
     email: "mailto:rosario@truecare-insurance.com",
     socials: {
       facebook: "https://facebook.com",
@@ -24,12 +25,12 @@ const advisors = [
   {
     name: "Armida Gonzalez",
     translationKey: "armida",
-    role: "Insurance Advisor",
+    role: "Insurance Agent",
     image: ftArmida,
     description:
       "Focused on helping families and individuals find reliable support for health insurance and protection needs.",
-    phone: "tel:5153053545",
-    email: "mailto:armidagonzalez101@gmail.com",
+    phone: "tel:5153806904",
+    email: "mailto:armida@truecare-insurance.com",
     socials: {
       facebook: "https://facebook.com",
       instagram: "https://facebook.com",

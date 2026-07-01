@@ -22,10 +22,10 @@ function Footer() {
 
           <a
             className="flex items-center justify-center gap-2 text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
-            href="tel:5153052213"
+            href="tel:5153611764"
           >
             <Phone size={16} />
-            515-305-2213</a>
+            515-361-1764</a>
           <a
             className="flex items-center justify-center gap-2 break-all text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
             href="mailto:rosario@truecare-insurance.com?subject=Insurance Consultation&body=Hello Rosario,%0A%0AI would like more information about your services."
@@ -74,16 +74,16 @@ function Footer() {
 
           <a
             className="flex items-center justify-center gap-2 text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
-            href="tel:5153052213"
+            href="tel:5153806904"
           >
             <Phone size={16} />
-            515-305-3545</a>
+            515-380-6904</a>
           <a 
           className="flex items-center justify-center gap-2 break-all text-slate-300 transition hover:text-[#58C7E6] sm:justify-start"
           href="mailto:armidagonzalez101@gmail.com?subject=Insurance Consultation&body=Hello Armida,%0A%0AI would like more information about your services."
           >
             <Mail size={16} />
-            armidagonzalez101@gmail.com</a>
+            armida@truecare-insurance.com</a>
 
           
           <div className="mt-5 flex justify-center gap-3 sm:justify-start">
@@ -123,11 +123,23 @@ function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 font-bold">{t.footer.tag}</h3>
-          <p className="text-slate-300">Des Moines, Iowa</p>
-          <p className="mt-3 text-slate-300">{t.footer.text}</p>
-          <p className="text-slate-300">9:00 AM to 5:00 PM</p>
-        </div>
+            <h3 className="mb-4 font-bold">{t.footer.tag}</h3>
+
+            <p className="text-slate-300">Des Moines, Iowa</p>
+
+            <div className="mt-3 space-y-1 text-slate-300">
+              <p>
+                {t.contact.info.hours.mondayThursday}:{" "}
+                {t.contact.info.hours.mondayThursdayTime}
+              </p>
+
+              <p>
+                {t.contact.info.hours.friday}:{" "}
+                {t.contact.info.hours.fridayTime}
+              </p>
+            </div>
+          </div>
+
       </div>
 
       <div className="mx-auto mt-12 max-w-7xl border-t border-slate-800 pt-8">

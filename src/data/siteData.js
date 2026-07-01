@@ -1,7 +1,7 @@
 export const company = {
   name: "TrueCare-Insurance",
-  phone: "+15153052213",
-  whatsapp: "+15152022826",
+  phone: "+15153611764",
+  whatsapp: "+15153806904",
   email: "rosario@truecare-insurance.com",
 };
 

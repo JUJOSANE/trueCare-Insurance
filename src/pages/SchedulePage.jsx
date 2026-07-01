@@ -5,20 +5,20 @@ import { useState } from "react";
 
 const advisors = [
   {
-    name: "Rosario Márquez",
+    name: "Rosario Marquez",
     translationKey: "rosario",
-    phone: "5153052213",
-    phoneLabel: "515-305-2213",
+    phone: "5153611764",
+    phoneLabel: "515-361-1764",
     email: "rosario@truecare-insurance.com",
-    bookingUrl: "https://calendly.com/jujosane888/free-insurance-consultation",
+    bookingUrl: "https://calendly.com/rosario-truecare-insurance/30min",
   },
   {
     name: "Armida Gonzalez",
     translationKey: "armida",
-    phone: "5153053545",
-    phoneLabel: "515-305-3545",
-    email: "armidagonzalez101@gmail.com",
-    bookingUrl: "https://calendly.com/jujosane888/free-insurance-consultation",
+    phone: "5153806904",
+    phoneLabel: "515-380-6904",
+    email: "armida@truecare-insurance.com",
+    bookingUrl: "https://calendly.com/armidagonzalez101/30min",
   },
 ];
 

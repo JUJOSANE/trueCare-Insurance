@@ -46,7 +46,6 @@ export default {
   },
     footer: {
     tag: "Ubicación",
-    text: "Lunes - Viernes",
   },
 
   /* Este es el What We Do */
@@ -247,12 +246,19 @@ contact: {
   },
 
   info: {
-    location: "Ubicación",
-    hours: "Horario de atención",
-    days: "Lunes a Viernes",
-    online: "¿Prefiere agendar en línea?",
-    onlineText: "Elija un horario disponible y nuestro equipo se pondrá en contacto con usted.",
+  location: "Ubicación",
+
+  hours: {
+    title: "Horario de atención",
+    mondayThursday: "Lunes - Jueves",
+    mondayThursdayTime: "9:00 AM - 4:00 PM",
+    friday: "Viernes",
+    fridayTime: "9:00 AM - 12:00 PM",
   },
+
+  online: "¿Prefieres agendar en línea?",
+  onlineText: "Elija un horario disponible y nuestro equipo se pondrá en contacto con usted.",
+},
 },
 schedule: {
   tag: "Agendar cita",

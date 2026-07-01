@@ -49,7 +49,6 @@ export default {
   },
     footer: {
     tag: "Location",
-    text: "Monday - Friday",
   },
 
   /* Este es el What We Do */
@@ -191,7 +190,7 @@ retirementPlanning: {
 
   advisors: {
     rosario: {
-      role: "Licensed Insurance Advisor",
+      role: "Insurance Agent",
       description:
         "Rosario helps clients understand their options with patience, clarity, and personalized guidance.",
       call: "Call",
@@ -199,7 +198,7 @@ retirementPlanning: {
     },
 
     armida: {
-      role: "Insurance Advisor",
+      role: "Insurance Agent",
       description:
         "Focused on helping families and individuals find reliable support for health insurance and protection needs.",
       call: "Call",
@@ -251,13 +250,20 @@ contact: {
     },
   },
 
-  info: {
-    location: "Location",
-    hours: "Business Hours",
-    days: "Monday - Friday",
-    online: "Prefer online booking?",
-    onlineText: "Choose an available time and our team will follow up with you.",
-  },
+      info: {
+      location: "Location",
+
+      hours: {
+        title: "Business Hours",
+        mondayThursday: "Monday - Thursday",
+        mondayThursdayTime: "9:00 AM - 4:00 PM",
+        friday: "Friday",
+        fridayTime: "9:00 AM - 12:00 PM",
+      },
+
+      online: "Prefer online booking?",
+      onlineText: "Choose an available time and our team will follow up with you.",
+    },
 },
 schedule: {
   tag: "Schedule Appointment",
@@ -267,12 +273,12 @@ schedule: {
   text: "Choose a time that works best for you. One of our licensed advisors will contact you at the scheduled time.",
 
   rosario: {
-    role: "Licensed Insurance Advisor",
+    role: "Insurance Agent",
     text: "Schedule a consultation with Rosario for Medicare, life insurance, and health coverage guidance.",
   },
 
   armida: {
-    role: "Insurance Advisor",
+    role: "Insurance Agent",
     text: "Schedule a consultation with Armida to discuss coverage options and insurance solutions.",
   },
 },

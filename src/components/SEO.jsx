@@ -26,7 +26,7 @@ function SEO({
 
   description,
 
-  telephone: "+1-515-305-2213",
+  telephone: "+1-515-361-1764",
 
   email: "rosario@truecare-insurance.com",
 

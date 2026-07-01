@@ -8,13 +8,14 @@ import {
 import { Link } from "react-router-dom";
 import ContactBenefits from "./ContactBenefits";
 import { useLanguage } from "../context/LanguageContext";
+import ftRosarioyArmida from "../assets/rosarioyArmida.webp";
 
 const advisors = [
   {
     name: "Rosario Marquez",
-    role: "Licensed Insurance Advisor",
-    phone: "5153052213",
-    phoneLabel: "515-305-2213",
+    role: "Insurance Agent",
+    phone: "5153611764",
+    phoneLabel: "515-361-1764",
     email: "rosario@truecare-insurance.com",
     socials: {
       facebook: "#",
@@ -25,10 +26,10 @@ const advisors = [
   },
   {
     name: "Armida Gonzalez",
-    role: "Licensed Insurance Advisor",
-    phone: "5153053545",
-    phoneLabel: "515-305-3545",
-    email: "armidagonzalez101@gmail.com",
+    role: "Insurance Agent",
+    phone: "5153806904",
+    phoneLabel: "515-380-6904",
+    email: "armida@truecare-insurance.com",
     socials: {
       facebook: "#",
       linkedin: "#",
@@ -70,6 +71,13 @@ function Contact() {
           <p className="mt-5 text-lg leading-8 text-slate-600">
             {t.contact.text}
           </p>
+        </div>
+        <div className="mx-auto mb-14 max-w-5xl overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-lg">
+          <img
+            src={ftRosarioyArmida}
+            alt="Rosario Marquez and Armida Gonzalez helping clients with their insurance needs."
+            className="h-[350px] w-full object-cover md:h-[650px] transition duration-500 hover:scale-[1.02]"
+          />
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -145,9 +153,21 @@ function Contact() {
           <div className="flex gap-4">
             <Clock className="shrink-0 text-[#58C7E6]" />
             <div>
-              <h3 className="font-bold">{t.contact.info.hours}</h3>
-              <p className="mt-2 text-slate-300">{t.contact.info.days}</p>
-              <p className="text-slate-300">9:00 AM to 5:00 PM</p>
+            <h3 className="font-bold">
+                  {t.contact.info.hours.title}
+                </h3>
+
+                <div className="mt-2 space-y-1 text-slate-300">
+                  <p>
+                    {t.contact.info.hours.mondayThursday}:{" "}
+                    {t.contact.info.hours.mondayThursdayTime}
+                  </p>
+
+                  <p>
+                    {t.contact.info.hours.friday}:{" "}
+                    {t.contact.info.hours.fridayTime}
+                  </p>
+                </div>
             </div>
           </div>
 
