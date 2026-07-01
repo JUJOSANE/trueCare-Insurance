@@ -6,11 +6,11 @@ function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full overflow-hidden px-5 py-24 md:px-12 md:py-34 lg:px-24">
+    <section className="relative w-full overflow-hidden px-5 pt-12 pb-20 md:px-12 md:pt-24 md:pb-24 lg:px-24">
       <div className="pointer-events-none absolute right-0 top-20 h-[420px] w-[420px] rounded-full bg-cyan-100 opacity-20 blur-3xl" />
       <div className="pointer-events-none absolute left-0 bottom-0 h-[360px] w-[360px] rounded-full bg-blue-100 opacity-20 blur-2xl" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl min-w-0 items-center gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+      <div className="relative mx-auto grid w-full  max-w-7xl min-w-0 items-center gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
         <div className="w-full min-w-0">
           <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-blue-700 sm:text-sm">
             {t.hero.tag}
